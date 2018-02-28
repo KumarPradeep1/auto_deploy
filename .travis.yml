@@ -9,6 +9,7 @@ branches:
 
 install:
   - bundle install
+  
 
 before_script:
   # - bundle exec rake db:test:prepare
