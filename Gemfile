@@ -41,7 +41,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'cucumber-rails', require: false
+  # gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
 end
