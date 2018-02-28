@@ -1,8 +1,35 @@
 language: ruby
 
-# Basic Settings
+rvm:
+  - 2.4.3
 
-sudo: enabled
+# sudo: enabled
+
+services:
+  - postgresql
+
+branches:
+  only:
+  - develop
+
+env:
+- DB=mongodb 
+
+before_install:
+  # - sudo apt-get -qq update
+
+install:
+  - bundle install
+
+
+before_script:
+  - psql -c 'create database auto_deploy_test;' -U postgres
+
+script:
+  # - bundle exec rake ci:tests    
+
+
+
 notifications:
   email:
     recipients:
@@ -15,14 +42,6 @@ notifications:
   #     - <account>:<token>#development
   #   on_success: change # default: always
   #   on_failure: always # default: always
-
-install:
-  - bundle install
-
-
-rvm:
-  - 2.4.3
-
 
 
 # branches:  
