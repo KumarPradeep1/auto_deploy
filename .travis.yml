@@ -4,12 +4,12 @@ rvm:
   - 2.4.3
 
 branches:  
-  only: 
+  except: 
     - master
 
 install:
   - bundle install
-  
+
 
 before_script:
   # - bundle exec rake db:test:prepare
