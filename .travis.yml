@@ -1,22 +1,44 @@
 language: ruby
 
-rvm:
-  - 2.4.3
+# Basic Settings
 
-branches:  
-  except: 
-    - master
+sudo: enabled
+notifications:
+  email:
+    recipients:
+      - pradeep@mashey.com
+      - vel@mashey.com
+    on_success: never # default: change
+    on_failure: always # default: always
+  # slack:
+  #   rooms:
+  #     - <account>:<token>#development
+  #   on_success: change # default: always
+  #   on_failure: always # default: always
 
 install:
   - bundle install
 
 
-before_script:
-  # - bundle exec rake db:test:prepare
-  # - bundle exec rake db:migrate
-script:
-  # - bundle exec rake ci:tests
-services:
-  - postgresql
-notifications:
-  email: true
+rvm:
+  - 2.4.3
+
+
+
+# branches:  
+#   except: 
+#     - master
+
+# install:
+#   - bundle install
+
+
+# before_script:
+#   # - bundle exec rake db:test:prepare
+#   # - bundle exec rake db:migrate
+# script:
+#   # - bundle exec rake ci:tests
+# services:
+#   - postgresql
+# notifications:
+#   email: true
